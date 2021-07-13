@@ -1,4 +1,4 @@
-package restexample.eteration;
+package restexample.eteration.model;
 
 public class Person {
 	int id;
