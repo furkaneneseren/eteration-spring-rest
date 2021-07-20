@@ -3,6 +3,7 @@ package restexample.eteration.controllers;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import restexample.eteration.dto.PersonDTO;
 import restexample.eteration.model.Person;
 
 @RestController
@@ -32,7 +34,12 @@ public class Controller {
 	
  	@PostMapping("/person/new")
 	public ResponseEntity<String> addPerson(@RequestBody Person person) {
-		personList.add(person);
+ 		//PersonDTO convertedPerson = new PersonDTO();
+		
+		//ModelMapper modelMapper = new ModelMapper();
+		
+		//modelMapper.map(person, convertedPerson);
+ 		personList.add(person);
 		return new ResponseEntity<> ("Person added", HttpStatus.OK);
 	}
 	
